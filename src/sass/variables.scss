@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+$Mainfont: 'IBM Plex Sans', sans-serif;
+
+:root {
+    //primary 
+    --very-dark-purple: hsl(278.18,64.71%,6.67%);
+    --dark-purple: hsl(278, 67%, 11%);
+    --purple: hsl(278, 68%, 23%);
+    --lightish-purple: hsl(278, 67%, 32%);
+    //text
+    --w: white;
+    --grey: hsla(0, 0%, 80%, 0.824);
+}
+
