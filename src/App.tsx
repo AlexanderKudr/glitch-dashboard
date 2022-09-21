@@ -5,6 +5,7 @@ import { Plugins } from "./pages/Plugins_/Plugins"
 import { Commands } from "./pages/Commands_/Commands"
 import { Logs } from "./pages/Logs_/Logs"
 import { useTheme } from "./hooks/useTheme";
+import 'bulma/css/bulma.css'
 
 export const App = () => {
 const {themes, currentTheme} = useTheme();
