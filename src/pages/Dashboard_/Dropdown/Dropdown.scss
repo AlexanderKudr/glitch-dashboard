@@ -1,0 +1,32 @@
+@use "../../../sass/themes.scss" as t;
+.dropdown {
+  .dropdown-menu {
+    margin-top: 5px;
+    overflow-y: auto;
+    height: 200px;
+  }
+  .dropdown-menu,
+  .dropdown-content {
+    background-color: var(--inputs-bg);
+    border-radius: 10px;
+    .dropdown-item {
+      background-color: var(--inputs-bg);
+      color: var(--w)
+    }
+  }
+}
+.dropdown-trigger .listbox {
+  background-color: var(--inputs-bg);
+  min-width: 70px;
+  border-radius: 10px;
+  border-style: none;
+  padding: 5px;
+
+
+  span {
+    color: var(--w);
+    display: flex;
+    justify-content: center;
+    padding: 0 10px;
+  }
+}
