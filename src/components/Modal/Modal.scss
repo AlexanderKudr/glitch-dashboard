@@ -1,0 +1,39 @@
+@use "../../sass/themes.scss" as t;
+.text {
+  display: flex;
+  position: relative;
+  p {
+    padding-right: 3px;
+    padding-bottom: 10px;
+  }
+  .mark {
+    color: var(--secondary-text);
+    transition: color 0.2s;
+    cursor: pointer;
+    transition: color 0.2s, scale 0.2s;
+    position: absolute;
+    right: -13px;
+    top:3px;
+    &:hover {
+      background-color: transparent;
+      border-radius: 50%;
+      color: var(--inputs-color-hover);
+      transition: color 0.2s, scale 0.2s;
+      transform: scale(1.1);
+    }
+  }
+}
+.modal-text {
+  background-color: var(--inputs-bg);
+  color: var(--secondary-text);
+  border-radius: 5px;
+  position: relative;
+  padding: 0 10px;
+  font-weight: 500;
+  span {
+    position: absolute;
+    cursor: pointer;
+    right: 0px;
+    top: 0;
+  }
+}

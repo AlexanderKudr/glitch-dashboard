@@ -1,36 +1,41 @@
-import {  useState } from "react";
-import "./Dropdown.scss"
-import { roles } from "./utils/ManagerRoles";
+import "./Dropdown.scss";
+import { useState } from "react";
+import { Channels } from "../../pages/Dashboard_/utils/Channels";
 
-export const Dropdown = ({ role, setRole }:any) => {
-
+interface test {
+  element: Channels,
+  setElement: any,
+  dropdownItems: Channels[]
+}
+export const Dropdown = ({ element, setElement, dropdownItems }:test) => {
   const [isActive, setIsActive] = useState(false);
   const handleActive = () => {
     setIsActive(!isActive);
   };
-  
+
   return (
     <div
       onClick={handleActive}
       className={isActive ? "dropdown is-active" : "dropdown"}
     >
       <div className="dropdown-trigger">
-        <button className="listbox"
+        <button
+          className="listbox"
           aria-haspopup="true"
           aria-controls="dropdown-menu"
         >
-          <span>{role.title}</span>
+          <span>{element.title}</span>
         </button>
       </div>
       <div className="dropdown-menu" id="dropdown-menu" role="menu">
-        <div style={{cursor: "pointer"}} className="dropdown-content">
-          {roles.map((role, index) => (
+        <div style={{ cursor: "pointer" }} className="dropdown-content">
+          {dropdownItems.map((item: any, index: number) => (
             <div
-              onClick={() => setRole(role)}
+              onClick={() => setElement(item)}
               className="dropdown-item"
               key={index}
             >
-              {role.title}
+              {item.title}
             </div>
           ))}
         </div>

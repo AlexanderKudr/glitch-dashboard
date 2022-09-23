@@ -1,9 +1,9 @@
-
 interface Iroles {
   id: number;
   title: string;
 }
-export const roles:Iroles[] = [
+
+export const roles: Iroles[] = [
   { id: 1, title: "Server Booster" },
   { id: 2, title: "Staff" },
   { id: 3, title: "glitch" },
