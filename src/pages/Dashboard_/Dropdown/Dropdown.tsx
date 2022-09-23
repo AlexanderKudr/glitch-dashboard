@@ -1,8 +1,8 @@
-import { useState } from "react";
+import {  useState } from "react";
 import "./Dropdown.scss"
 import { roles } from "./utils/ManagerRoles";
 
-export const Dropdown = ({ role, setRole }: any) => {
+export const Dropdown = ({ role, setRole }:any) => {
 
   const [isActive, setIsActive] = useState(false);
   const handleActive = () => {

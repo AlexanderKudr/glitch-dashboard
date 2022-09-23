@@ -8,7 +8,7 @@
   .dropdown-menu,
   .dropdown-content {
     background-color: var(--inputs-bg);
-    border-radius: 10px;
+    border-radius: 5px;
     .dropdown-item {
       background-color: var(--inputs-bg);
       color: var(--w)
@@ -18,7 +18,7 @@
 .dropdown-trigger .listbox {
   background-color: var(--inputs-bg);
   min-width: 70px;
-  border-radius: 10px;
+  border-radius: 5px;
   border-style: none;
   padding: 5px;
 

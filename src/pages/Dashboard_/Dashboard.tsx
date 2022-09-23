@@ -2,8 +2,12 @@ import { useState } from "react";
 import "./Dashboard.scss";
 import { Dropdown } from "./Dropdown/Dropdown";
 
+ export interface DB {
+  role: string;
+  setRole: string;
+}
 export const Dashboard = () => {
-  const [role, setRole] = useState({title: "Choose one"});
+  const [role, setRole] = useState<DB | object>({title: "Choose one"});
 
   return (
     <div className="dashboard">
@@ -53,8 +57,7 @@ export const Dashboard = () => {
             </select>
           </div>
         </div>
-        <button className="btn">Save</button>
-
+        <button className="save-btn">Save</button>
       </div>
       {/* <div className="recent-activity">
         <h3>RECENT ACTIVITY</h3>
@@ -69,4 +72,3 @@ export const Dashboard = () => {
     </div>
   );
 };
-

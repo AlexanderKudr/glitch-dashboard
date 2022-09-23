@@ -95,13 +95,16 @@
           }
         }
       }
-      #dropdown-basic-button {
-        font-size: 12px;
-        border-radius: 10px;
-        font-family: v.$Mainfont;
+      .manager-roles {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
       }
+ 
     }
-    .btn {
+    .save-btn {
       border: none;
       padding: 5px 10px 5px 10px;
       margin-bottom: 10px;
