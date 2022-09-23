@@ -4,7 +4,7 @@ import "./Modal.scss";
 import { FaQuestionCircle } from "react-icons/fa";
 
 export const Modal = ({title, modalText}:{title:string, modalText:string}) => {
-  let [isOpen, setIsOpen] = useState(true);
+  let [isOpen, setIsOpen] = useState(false);
   const handleModal = () => {
     setIsOpen(!isOpen);
   };

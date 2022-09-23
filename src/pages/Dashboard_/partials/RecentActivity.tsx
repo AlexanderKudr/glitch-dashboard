@@ -1,4 +1,3 @@
-import { Modal } from "../../../components/Modal/Modal";
 import "./RecentActivity.scss";
 export const RecentActivity = () => {
   return (

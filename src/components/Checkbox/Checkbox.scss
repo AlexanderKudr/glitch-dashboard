@@ -16,10 +16,12 @@
   cursor: pointer;
   height: 0;
   width: 0;
+  
 }
 
 .container {
-  display: block;
+  display: flex;
+  align-items: center;
   position: relative;
   cursor: pointer;
   font-size: 20px;

@@ -26,14 +26,12 @@ export const BotSettings = () => {
           <Dropdown dropdownItems={roles} element={role} setElement={setRole} />
         </div>
         <div className="manager-roles">
-          <label>
-            <Modal
-              title={"Updates Channel"}
-              modalText={
-                "Receive instant notifications when glitch receives a new update."
-              }
-            />
-          </label>
+          <Modal
+            title={"Updates Channel"}
+            modalText={
+              "Receive instant notifications when glitch receives a new update."
+            }
+          />
           <Dropdown
             dropdownItems={channels}
             element={channel}

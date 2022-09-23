@@ -55,6 +55,9 @@
       align-items: flex-start;
       flex-direction: column;
       padding: 10px 0;
+      label {
+        padding-bottom: 10px;
+      }
     }
   }
   .save-btn {

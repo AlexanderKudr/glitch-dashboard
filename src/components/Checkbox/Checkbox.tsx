@@ -6,8 +6,8 @@ export const Checkbox = ({ text }: { text: string }) => {
         <label className="container">
           <input type="checkbox" />
           <div className="checkmark"></div>
+          <p>{text}</p>
         </label>
-        <p>{text}</p>
       </div>
     </>
   );
