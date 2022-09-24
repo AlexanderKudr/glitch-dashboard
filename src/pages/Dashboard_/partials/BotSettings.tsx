@@ -3,7 +3,7 @@ import { Checkbox } from "../../../components/Checkbox/Checkbox";
 import { Dropdown } from "../../../components/Dropdown/Dropdown";
 import { Channels, channels } from "../utils/Channels";
 import { roles } from "../utils/ManagerRoles";
-import { Modal } from "../../../components/Modal/Modal";
+import { Tip } from "../../../components/Tip/Tip";
 import "./BotSettings.scss";
 
 export const BotSettings = () => {
@@ -26,11 +26,13 @@ export const BotSettings = () => {
           <Dropdown dropdownItems={roles} element={role} setElement={setRole} />
         </div>
         <div className="manager-roles">
-          <Modal
+          {/* SHOULD USE ON MOUSE LEAVE */}
+          <Tip
             title={"Updates Channel"}
             modalText={
               "Receive instant notifications when glitch receives a new update."
             }
+            withMouseLeave
           />
           <Dropdown
             dropdownItems={channels}

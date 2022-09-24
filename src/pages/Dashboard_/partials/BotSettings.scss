@@ -68,6 +68,7 @@
     color: var(--w);
     background-color: var(--inputs-bg);
     transition: background-color 0.3s;
+    cursor: pointer;
     &:hover {
       background-color: var(--inputs-bg-hover);
       transition: background-color 0.3s;

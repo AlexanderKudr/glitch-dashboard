@@ -3,13 +3,13 @@ export const RecentActivity = () => {
   return (
     <div className="recent-activity">
       <h3>RECENT ACTIVITY</h3>
-      <table>
+      {/* <table>
         <tr>
           <th>Test</th>
           <th>Test2</th>
           <th>Test3</th>
         </tr>
-      </table>
+      </table> */}
     </div>
   );
 };

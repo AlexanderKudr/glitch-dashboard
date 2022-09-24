@@ -1,5 +1,6 @@
 @use "../../sass/themes.scss" as t;
 .dropdown {
+  cursor: pointer;
   .dropdown-menu {
     margin-top: 5px;
     height: 200px;
@@ -12,8 +13,10 @@
   }
   .dropdown-menu,
   .dropdown-content {
+    transition: all 0.5 ease;
     background-color: var(--inputs-bg);
     border-radius: 5px;
+
     .dropdown-item {
       background-color: var(--inputs-bg);
       color: var(--w);
@@ -26,7 +29,7 @@
   border-radius: 5px;
   border-style: none;
   padding: 5px;
-
+  cursor: pointer;
   span {
     color: var(--w);
     display: flex;

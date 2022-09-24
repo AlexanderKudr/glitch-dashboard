@@ -24,12 +24,11 @@
   }
 }
 .dialog {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .modal-text {
-    position: absolute;
-    left: 0;
-    top: 50%;
- 
+     
     background-color: var(--inputs-bg);
     color: var(--secondary-text);
     border-radius: 5px;

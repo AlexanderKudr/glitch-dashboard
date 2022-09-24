@@ -2,21 +2,20 @@ import "./Dropdown.scss";
 import { useState } from "react";
 import { Channels } from "../../pages/Dashboard_/utils/Channels";
 
-interface test {
-  element: Channels,
-  setElement: any,
-  dropdownItems: Channels[]
+interface Dropdown {
+  element: Channels;
+  setElement: any;
+  dropdownItems: Channels[];
 }
-export const Dropdown = ({ element, setElement, dropdownItems }:test) => {
+export const Dropdown = ({ element, setElement, dropdownItems }: Dropdown) => {
   const [isActive, setIsActive] = useState(false);
   const handleActive = () => {
     setIsActive(!isActive);
-  };
-
+  }; 
   return (
     <div
       onClick={handleActive}
-      className={isActive ? "dropdown is-active" : "dropdown"}
+      className={`${isActive ? 'dropdown is-active' : 'dropdown'}`}
     >
       <div className="dropdown-trigger">
         <button
@@ -27,7 +26,12 @@ export const Dropdown = ({ element, setElement, dropdownItems }:test) => {
           <span>{element.title}</span>
         </button>
       </div>
-      <div className="dropdown-menu" id="dropdown-menu" role="menu">
+      <div
+        onMouseLeave={() => setIsActive(false)}
+        className="dropdown-menu"
+        id="dropdown-menu"
+        role="menu"
+      >
         <div style={{ cursor: "pointer" }} className="dropdown-content">
           {dropdownItems.map((item: any, index: number) => (
             <div
