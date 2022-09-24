@@ -1,6 +1,9 @@
-import "./Commands.scss"
+import "./Commands.scss";
+import { Sidebar } from "../../components/Sidebar/Sidebar";
 export const Commands = () => {
-    return (
-        <div>Commands</div>
-    )
-}
+  return (
+    <>
+      <Sidebar />
+    </>
+  );
+};
