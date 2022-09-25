@@ -1,25 +1,27 @@
+import { nanoid } from "nanoid";
+
 interface Iroles {
-  id: number;
+  id: string;
   title: string;
 }
 
 export const roles: Iroles[] = [
-  { id: 1, title: "Server Booster" },
-  { id: 2, title: "Staff" },
-  { id: 3, title: "glitch" },
-  { id: 4, title: "⭐releaser⭐" },
-  { id: 5, title: "Dyno" },
-  { id: 6, title: "Bots" },
-  { id: 7, title: "Javascript" },
-  { id: 8, title: "PHP" },
-  { id: 9, title: "Python" },
-  { id: 10, title: "Golang" },
-  { id: 11, title: "Java" },
-  { id: 12, title: "Kotlin" },
-  { id: 13, title: "C#" },
-  { id: 14, title: "Swift" },
-  { id: 15, title: "Rust" },
-  { id: 16, title: "Ruby" },
-  { id: 17, title: "C/C++" },
-  { id: 18, title: "TStudy" },
+  { id: nanoid(), title: "Server Booster" },
+  { id: nanoid(), title: "Staff" },
+  { id: nanoid(), title: "glitch" },
+  { id: nanoid(), title: "⭐releaser⭐" },
+  { id: nanoid(), title: "Dyno" },
+  { id: nanoid(), title: "Bots" },
+  { id: nanoid(), title: "Javascript" },
+  { id: nanoid(), title: "PHP" },
+  { id: nanoid(), title: "Python" },
+  { id: nanoid(), title: "Golang" },
+  { id: nanoid(), title: "Java" },
+  { id: nanoid(), title: "Kotlin" },
+  { id: nanoid(), title: "C#" },
+  { id: nanoid(), title: "Swift" },
+  { id: nanoid(), title: "Rust" },
+  { id: nanoid(), title: "Ruby" },
+  { id: nanoid(), title: "C/C++" },
+  { id: nanoid(), title: "TStudy" },
 ];

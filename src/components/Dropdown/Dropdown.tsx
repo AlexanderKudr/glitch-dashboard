@@ -39,7 +39,7 @@ export const Dropdown = ({ element, setElement, dropdownItems }: Dropdown) => {
               className="dropdown-item"
               key={index}
             >
-              {item.title}
+            {item.title}
             </div>
           ))}
         </div>

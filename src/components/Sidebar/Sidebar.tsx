@@ -1,5 +1,5 @@
 import "./Sidebar.scss";
-import { AppShell, Header, Navbar } from "@mantine/core";
+import { Navbar } from "@mantine/core";
 export const Sidebar = () => {
   return (
     <>

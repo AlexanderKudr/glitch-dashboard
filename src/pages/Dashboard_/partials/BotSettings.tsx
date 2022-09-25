@@ -7,8 +7,11 @@ import { Tip } from "../../../components/Tip/Tip";
 import "./BotSettings.scss";
 
 export const BotSettings = () => {
-  const [role, setRole] = useState<Channels>({ id: 1, title: "Choose one" });
-  const [channel, setChannel] = useState<Channels>({ id: 1, title: "Channel" });
+  const [role, setRole] = useState<Channels>({ id: "1", title: "Choose one" });
+  const [channel, setChannel] = useState<Channels>({
+    id: "1",
+    title: "Channel",
+  });
   return (
     <div className="bot-settings">
       <h3>BOT SETTINGS</h3>
@@ -26,7 +29,6 @@ export const BotSettings = () => {
           <Dropdown dropdownItems={roles} element={role} setElement={setRole} />
         </div>
         <div className="manager-roles">
-          {/* SHOULD USE ON MOUSE LEAVE */}
           <Tip
             title={"Updates Channel"}
             modalText={
