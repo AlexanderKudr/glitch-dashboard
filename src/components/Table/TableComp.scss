@@ -1,0 +1,17 @@
+@use "../../sass/themes.scss" as t;
+@use '../../sass/variables.scss' as v;
+.th1 {
+  color: var(--text);
+  font-family: v.$Mainfont;
+  font-weight: 400;
+}
+.throw {
+  transition: background-color 0.3s;
+  color: var(--secondary-text);
+  &:hover {
+    background-color: var(--inputs-bg);
+  }
+}
+.tets {
+  border: none;
+}

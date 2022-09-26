@@ -15,15 +15,21 @@ export const TableComp = ({ tableContent }: TableInt) => {
     </tr>
   ));
   return (
-    <Table highlightOnHover>
-      <thead>
-        <tr>
-          <th className="th1">Date</th>
-          <th>User</th>
-          <th>Action</th>
+    <Table >
+      <thead className="tets">
+        <tr className="tets">
+          <th>
+            <span className="th1">Date</span>
+          </th>
+          <th>
+            <span className="th1">User</span>
+          </th>
+          <th>
+            <span className="th1">Action</span>
+          </th>
         </tr>
       </thead>
-      <tbody>{rows}</tbody>
+      <tbody className="throw">{rows}</tbody>
     </Table>
   );
 };
