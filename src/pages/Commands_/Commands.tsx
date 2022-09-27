@@ -1,8 +1,10 @@
-import { Sidebar } from "../../components/Sidebar/Sidebar";
+import { ServerInfo } from "../Dashboard_/partials/ServerInfo";
+import "./Commands.scss";
+
 export const Commands = () => {
   return (
     <>
-      <Sidebar />
+      <ServerInfo />
     </>
   );
 };

@@ -1,0 +1,50 @@
+@use "../../sass/themes.scss" as t;
+@use "../../sass/variables.scss" as v;
+
+.nav {
+  background-color: var(--main-bg);
+  border-right: 1px solid var(--divider-gr);
+  .top-header {
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    img {
+      transform: translatey(0px);
+      -webkit-animation: float 6s ease-in-out infinite;
+      animation: float 6s ease-in-out infinite;
+      // background-color: transparent;
+    }
+    @-webkit-keyframes float {
+      0% {
+        transform: translatey(0px);
+      }
+      50% {
+        transform: translatey(-10px);
+      }
+      100% {
+        transform: translatey(0px);
+      }
+    }
+    @keyframes float {
+      0% {
+        transform: translatey(0px);
+      }
+      50% {
+        transform: translatey(-10px);
+      }
+      100% {
+        transform: translatey(0px);
+      }
+    }
+    .logo-text {
+      font-family: v.$Mainfont;
+      color: var(--logo-text);
+      font-size: 1.5rem;
+      margin-left: -10px;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    
+  }
+}

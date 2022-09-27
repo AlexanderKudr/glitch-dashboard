@@ -10,11 +10,13 @@ $Mainfont: 'IBM Plex Sans', sans-serif;
     --lightish-purple: #601b88;
     --light-purple: hsl(278, 100%, 50%);
     
-    --blue: rgb(8, 8, 76);
-    --l-blue: rgb(0, 102, 255);
+    --blue: hsl(240, 81%, 16%);
+    --l-blue: hsl(216, 100%, 50%);
+    --lightish-blue: rgb(82, 151, 254);
     --black: black;
     //text
     --w: white;
     --grey: hsla(0, 0%, 80%, 0.824);
+    --fade-grey: hsla(0, 0%, 40%, 0.24);
 }
 

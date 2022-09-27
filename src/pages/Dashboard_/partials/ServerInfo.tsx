@@ -8,20 +8,24 @@ export const ServerInfo = () => {
                       in the discord about the bot
                       and Alex_#6097 if you need
                       help with the dashboard`;
+  const serverInfo = [
+    "Members:",
+    "Categories:",
+    "Text Channels:",
+    "Voice Channels:",
+    "Roles:",
+  ];
+  const infoList = serverInfo.map((info, index) => <li key={index}>{info}</li>);
+
+
   return (
-    <div className="serv-info">
+    <main className="serv-info">
       <h3 className="header">
         SERVER INFO<button onClick={themeFunc}>Change me</button>
       </h3>
       <div className="info-other">
         <div className="info">
-          <ul>
-            <li>Members:</li>
-            <li>Categories:</li>
-            <li>Text Channels:</li>
-            <li>Voice Channels:</li>
-            <li>Roles:</li>
-          </ul>
+          <ul>{infoList}</ul>
         </div>
         <div className="other">
           <span className="serv-id">
@@ -33,6 +37,6 @@ export const ServerInfo = () => {
           </span>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
