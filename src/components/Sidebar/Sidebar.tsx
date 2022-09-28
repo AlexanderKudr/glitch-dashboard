@@ -1,39 +1,73 @@
 import "./Sidebar.scss";
 import { Navbar, AppShell } from "@mantine/core";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { FaDesktop, FaBuffer, FaCode, FaDatabase } from "react-icons/fa";
+import { nanoid } from "nanoid";
+import { useState } from "react";
 
 interface Links {
+  id: string;
   icon: JSX.Element;
   text: string;
+  active: boolean;
+  link: string;
 }
 export const Sidebar = () => {
-  const linksList: Links[] = [
-    { icon: <FaDesktop />, text: "Dashboard" },
-    { icon: <FaBuffer />, text: "Plugins" },
-    { icon: <FaCode />, text: "Commands" },
-    { icon: <FaDatabase />, text: "Logs" },
-  ];
-  const list = linksList.map((item) => (
-    <li className="list-icons">
-      {item.icon}
-      <span className="list-text">{item.text}</span>
-    </li>
-  ));
+  const [linksList, setLinksList] = useState<Links[]>([
+    {
+      id: nanoid(),
+      icon: <FaDesktop />,
+      text: "Dashboard",
+      active: true,
+      link: "/",
+    },
+    {
+      id: nanoid(),
+      icon: <FaBuffer />,
+      text: "Plugins",
+      active: false,
+      link: "plugins",
+    },
+    {
+      id: nanoid(),
+      icon: <FaCode />,
+      text: "Commands",
+      active: false,
+      link: "commands",
+    },
+    {
+      id: nanoid(),
+      icon: <FaDatabase />,
+      text: "Logs",
+      active: false,
+      link: "logs",
+    },
+  ]);
+  const isActive = (id: any) => {
+    let newArray = linksList.map((item) => {
+      item.active = item.id === id;
+      return item;
+    });
+    setLinksList(newArray);
+    // let newArray = [...linksList];
+    // for (let i = 0; i < newArray.length; i++) {
+    //   newArray[i].active = newArray[i].id === id;
+    // }
+    // setLinksList(newArray);
+  };
 
   return (
     <>
       <AppShell>
         <Navbar
           className="nav"
-          width={{
-            // When viewport is larger than theme.breakpoints.sm, Navbar width will be 300
-            sm: 250,
-            // When viewport is larger than theme.breakpoints.lg, Navbar width will be 400
-            lg: 350,
-            // When other breakpoints do not match base width is used, defaults to 100%
-            base: 100,
-          }}
+          width={{ sm: 250, lg: 300, base: 100 }}
+          // When viewport is larger than theme.breakpoints.sm,
+          // Navbar width will be 300
+          // When viewport is larger than theme.breakpoints.lg,
+          // Navbar width will be 400
+          // When other breakpoints do not match base width is used,
+          // defaults to 100%
         >
           <Navbar.Section className="top-header">
             <img
@@ -42,8 +76,37 @@ export const Sidebar = () => {
             />
             <span className="logo-text">GLITCH</span>
           </Navbar.Section>
-          <Navbar.Section mt="lg">
-            <ul>{list}</ul>
+          <Navbar.Section className="middle" mt="lg">
+            <ul className="ul">
+              {linksList.map((item) => (
+                <li
+                  className="list"
+                  key={item.id}
+                  onClick={() => {
+                    isActive(item.id);
+                  }}
+                >
+                  <Link to={item.link}>
+                    <span
+                      className={`${
+                        item.active
+                          ? "list-icons list-icons-active"
+                          : "list-icons"
+                      }`}
+                    >
+                      {item.icon}
+                    </span>
+                    <span
+                      className={`${
+                        item.active ? "list-text list-text-active" : "list-text"
+                      }`}
+                    >
+                      {item.text}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </Navbar.Section>
           <Navbar.Section>{/* Footer with user */}</Navbar.Section>
         </Navbar>

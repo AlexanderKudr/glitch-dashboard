@@ -8,10 +8,12 @@ interface Dropdown {
   dropdownItems: Channels[];
 }
 export const Dropdown = ({ element, setElement, dropdownItems }: Dropdown) => {
+  
   const [isActive, setIsActive] = useState(false);
   const handleActive = () => {
     setIsActive(!isActive);
   }; 
+
   return (
     <div
       onClick={handleActive}

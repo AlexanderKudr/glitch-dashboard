@@ -17,12 +17,11 @@ export const ServerInfo = () => {
   ];
   const infoList = serverInfo.map((info, index) => <li key={index}>{info}</li>);
 
-
   return (
     <main className="serv-info">
-      <h3 className="header">
-        SERVER INFO<button onClick={themeFunc}>Change me</button>
-      </h3>
+      <h1 className="header">
+        SERVER INFO
+      </h1>
       <div className="info-other">
         <div className="info">
           <ul>{infoList}</ul>
