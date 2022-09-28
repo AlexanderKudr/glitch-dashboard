@@ -2,6 +2,9 @@ import "./ServerInfo.scss";
 import { FaRegCopy } from "react-icons/fa";
 import { Tip } from "../../../components/Tip/Tip";
 import { useTheme } from "../../../hooks/useTheme";
+
+import { useClipboard } from "@mantine/hooks";
+
 export const ServerInfo = () => {
   const { themeFunc } = useTheme();
   const modalText = `You can ask kynoshi#7193
@@ -17,11 +20,13 @@ export const ServerInfo = () => {
   ];
   const infoList = serverInfo.map((info, index) => <li key={index}>{info}</li>);
 
+  const clipboard = useClipboard({timeout: 500});
+  const copied = () => {
+    clipboard.copy("1008061995095957705");
+  }
   return (
     <main className="serv-info">
-      <h1 className="header">
-        SERVER INFO
-      </h1>
+      <h1 className="header">SERVER INFO</h1>
       <div className="info-other">
         <div className="info">
           <ul>{infoList}</ul>
