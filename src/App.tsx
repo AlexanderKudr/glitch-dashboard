@@ -10,6 +10,7 @@ import "bulma/css/bulma.css";
 
 export const App = () => {
   const { themes, currentTheme } = useTheme();
+
   return (
     <div className="app">
       <Routes>

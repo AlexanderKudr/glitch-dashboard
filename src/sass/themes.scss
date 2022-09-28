@@ -1,7 +1,8 @@
 .purple {
     --main-bg: var(--very-dark-purple);
-    --secondary-bg: var(--dark-purple);
-
+    --secondary-bg: var(--very-dark-purple);
+    --shadow-bg: var(--lightish-blue);
+    
     --inputs-bg: var(--purple);
     --inputs-bg-hover: var(--lightish-purple);
 
@@ -13,6 +14,7 @@
     --logo-text: var(--lightish-blue);
 
     --divider-gr: var(--fade-grey);
+    --divider-bl: var(--darkish-blue);
     --icons: var(--fade-light-grey);
     --text: var(--w);
     --secondary-text: var(--grey);

@@ -3,7 +3,7 @@
 
 .nav {
   background-color: var(--main-bg);
-  border-right: 1px solid var(--divider-gr);
+  border-right: 1px solid var(--divider-bl);
   .top-header {
     padding-bottom: 50px;
     margin-left: -25px;
@@ -65,6 +65,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  %hover-active {
+    color: var(--inputs-color-hover);
+    transform: scale(1.01);
+  }
   .ul {
     .list {
       display: flex;
@@ -74,15 +78,16 @@
       transition: all 0.3s ease-in-out;
       cursor: pointer;
       &:hover .list-icons {
-        color: var(--inputs-color-hover);
-        transform: scale(1.01);
+        @extend %hover-active;
       }
       &:hover .list-text {
         color: var(--text);
       }
+      .link {
+        display: flex;
+      }
       .list-icons {
         font-size: 1.4rem;
-        margin-bottom: -5px;
         color: var(--icons);
         transition: all 0.3s ease-in-out;
         &-active {

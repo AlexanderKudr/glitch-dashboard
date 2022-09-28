@@ -1,6 +1,6 @@
 @use "../../../sass/variables.scss" as v;
 .recent-activity {
-  min-width: 400px; //temporarely
+  width: 50vw; //temporarely
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,7 +8,8 @@
   background-color: var(--secondary-bg);
   border-radius: 10px;
   margin-bottom: 10px;
-  color: var(--w);
+  color: var(--logo-text);
   font-family: v.$Mainfont;
   align-items: center;
+  box-shadow: 0 0 2px 0px var(--shadow-bg);
 }

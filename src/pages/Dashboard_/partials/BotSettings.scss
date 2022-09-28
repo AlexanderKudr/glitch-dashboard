@@ -2,7 +2,7 @@
 @use "../../../sass/variables.scss" as v;
 
 .bot-settings {
-  min-width: 400px; //temporarely
+  width: 50vw; //temporarely
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,10 +12,12 @@
   margin-bottom: 10px;
   align-items: center;
   padding: 30px;
-  color: var(--w);
+  color: var(--logo-text);
   font-family: v.$Mainfont;
+  box-shadow: 0 0 2px 0px var(--shadow-bg);
   .inputs-checkboxes {
     display: flex;
+    flex-wrap: wrap;
     padding: 10px 0;
     justify-content: center;
   }
@@ -54,11 +56,14 @@
     .manager-roles {
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
       padding: 10px 0;
+      .updates {
+        padding-right: 18px;
+      }
       label {
-        padding-bottom: 10px;
+        padding-right: 5px;
       }
     }
   }

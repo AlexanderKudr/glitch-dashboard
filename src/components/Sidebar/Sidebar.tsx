@@ -1,6 +1,6 @@
 import "./Sidebar.scss";
 import { Navbar, AppShell } from "@mantine/core";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import { FaDesktop, FaBuffer, FaCode, FaDatabase } from "react-icons/fa";
 import { nanoid } from "nanoid";
 import { useState } from "react";
@@ -26,25 +26,26 @@ export const Sidebar = () => {
       icon: <FaBuffer />,
       text: "Plugins",
       active: false,
-      link: "plugins",
+      link: "/plugins",
     },
     {
       id: nanoid(),
       icon: <FaCode />,
       text: "Commands",
       active: false,
-      link: "commands",
+      link: "/commands",
     },
     {
       id: nanoid(),
       icon: <FaDatabase />,
       text: "Logs",
       active: false,
-      link: "logs",
+      link: "/logs",
     },
   ]);
-  const isActive = (id: any) => {
-    let newArray = linksList.map((item) => {
+  const isActive = (id: string) => {
+    //styling list
+    let newArray: Links[] = linksList.map((item) => {
       item.active = item.id === id;
       return item;
     });
@@ -55,6 +56,7 @@ export const Sidebar = () => {
     // }
     // setLinksList(newArray);
   };
+  const location = useLocation();
 
   return (
     <>
@@ -86,10 +88,10 @@ export const Sidebar = () => {
                     isActive(item.id);
                   }}
                 >
-                  <Link to={item.link}>
+                  <Link className="link" to={item.link}>
                     <span
                       className={`${
-                        item.active
+                        item.link === location.pathname
                           ? "list-icons list-icons-active"
                           : "list-icons"
                       }`}
