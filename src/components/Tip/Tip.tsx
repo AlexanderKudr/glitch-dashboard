@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Tip.scss";
 import { FaQuestionCircle } from "react-icons/fa";
 import { Tooltip } from "@mantine/core";
+import {Button} from '@mantine/core'
 
 interface Modal {
   title: string;

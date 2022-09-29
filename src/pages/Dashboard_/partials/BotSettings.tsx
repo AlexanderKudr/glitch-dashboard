@@ -1,17 +1,16 @@
 import { useState } from "react";
 import { Checkbox } from "../../../components/Checkbox/Checkbox";
 import { Dropdown } from "../../../components/Dropdown/Dropdown";
-import { Channels, channels } from "../utils/Channels";
+import { channels } from "../utils/Channels";
 import { roles } from "../utils/ManagerRoles";
 import { Tip } from "../../../components/Tip/Tip";
+import {Button} from '@mantine/core';
 import "./BotSettings.scss";
 
 export const BotSettings = () => {
-  const [role, setRole] = useState<Channels>({ id: "1", title: "Choose one" });
-  const [channel, setChannel] = useState<Channels>({
-    id: "1",
-    title: "Channel",
-  });
+  const [role, setRole] = useState<string | null>(null);
+  const [channel, setChannel] = useState<string | null>(null);
+
   return (
     <div className="bot-settings">
       <h3>BOT SETTINGS</h3>
@@ -26,7 +25,12 @@ export const BotSettings = () => {
         </div>
         <div className="manager-roles">
           <label>Manager Roles (Owner/Administator Only)</label>
-          <Dropdown dropdownItems={roles} element={role} setElement={setRole} />
+          <Dropdown
+            data={roles}
+            placeholder="Select role"
+            value={role}
+            onChange={setRole}
+          />
         </div>
         <div className="manager-roles">
           <span className="updates">
@@ -38,10 +42,12 @@ export const BotSettings = () => {
               withMouseLeave
             />
           </span>
+
           <Dropdown
-            dropdownItems={channels}
-            element={channel}
-            setElement={setChannel}
+            data={channels}
+            placeholder="Select Channel"
+            value={channel}
+            onChange={setChannel}
           />
         </div>
       </div>

@@ -1,26 +1,23 @@
 import { nanoid } from "nanoid";
-export interface Channels {
-  id: string;
-  title: string;
-}
+import { SelectItem } from "@mantine/core";
 
-export const channels: Channels[] = [
-  { id: nanoid(), title: "sandbox" },
-  { id: nanoid(), title: "dynolog" },
-  { id: nanoid(), title: "bots" },
-  { id: nanoid(), title: "moderator-only" },
-  { id: nanoid(), title: "text" },
-  { id: nanoid(), title: "mobile" },
-  { id: nanoid(), title: "devops" },
-  { id: nanoid(), title: "databases" },
-  { id: nanoid(), title: "backend" },
-  { id: nanoid(), title: "frontend" },
-  { id: nanoid(), title: "coding-quiz" },
-  { id: nanoid(), title: "memes" },
-  { id: nanoid(), title: "codewars" },
-  { id: nanoid(), title: "roast-my-code" },
-  { id: nanoid(), title: "general" },
-  { id: nanoid(), title: "welcome" },
-  { id: nanoid(), title: "rules" },
-  { id: nanoid(), title: "roles" },
+export const channels: Array<SelectItem> = [
+  { value: nanoid(), label: "sandbox" },
+  { value: nanoid(), label: "dynolog" },
+  { value: nanoid(), label: "bots" },
+  { value: nanoid(), label: "moderator-only" },
+  { value: nanoid(), label: "text" },
+  { value: nanoid(), label: "mobile" },
+  { value: nanoid(), label: "devops" },
+  { value: nanoid(), label: "databases" },
+  { value: nanoid(), label: "backend" },
+  { value: nanoid(), label: "frontend" },
+  { value: nanoid(), label: "coding-quiz" },
+  { value: nanoid(), label: "memes" },
+  { value: nanoid(), label: "codewars" },
+  { value: nanoid(), label: "roast-my-code" },
+  { value: nanoid(), label: "general" },
+  { value: nanoid(), label: "welcome" },
+  { value: nanoid(), label: "rules" },
+  { value: nanoid(), label: "roles" },
 ];

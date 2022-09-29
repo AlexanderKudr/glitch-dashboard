@@ -1,4 +1,5 @@
 @use "../../../sass/variables.scss" as v;
+@use "../../../sass/themes.scss" as t;
 .serv-info {
   width: 50vw; //temporarely
   display: flex;
@@ -32,6 +33,9 @@
       flex-direction: column;
       .serv-id {
         margin-bottom: 5px;
+        position: relative;
+        display: flex;
+        align-items: center;
         .mark {
           color: var(--secondary-text);
           transition: color 0.2s;

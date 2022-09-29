@@ -1,27 +1,23 @@
-import { nanoid } from "nanoid";
+import { SelectItem } from '@mantine/core'
+import {nanoid} from 'nanoid'
 
-interface Iroles {
-  id: string;
-  title: string;
-}
-
-export const roles: Iroles[] = [
-  { id: nanoid(), title: "Server Booster" },
-  { id: nanoid(), title: "Staff" },
-  { id: nanoid(), title: "glitch" },
-  { id: nanoid(), title: "⭐releaser⭐" },
-  { id: nanoid(), title: "Dyno" },
-  { id: nanoid(), title: "Bots" },
-  { id: nanoid(), title: "Javascript" },
-  { id: nanoid(), title: "PHP" },
-  { id: nanoid(), title: "Python" },
-  { id: nanoid(), title: "Golang" },
-  { id: nanoid(), title: "Java" },
-  { id: nanoid(), title: "Kotlin" },
-  { id: nanoid(), title: "C#" },
-  { id: nanoid(), title: "Swift" },
-  { id: nanoid(), title: "Rust" },
-  { id: nanoid(), title: "Ruby" },
-  { id: nanoid(), title: "C/C++" },
-  { id: nanoid(), title: "TStudy" },
+export const roles: Array<SelectItem> = [
+  { value: nanoid(), label: "Server Booster" },
+  { value: nanoid(), label: "Staff" },
+  { value: nanoid(), label: "glitch" },
+  { value: nanoid(), label: "⭐releaser⭐" },
+  { value: nanoid(), label: "Dyno" },
+  { value: nanoid(), label: "Bots" },
+  { value: nanoid(), label: "Javascript" },
+  { value: nanoid(), label: "PHP" },
+  { value: nanoid(), label: "Python" },
+  { value: nanoid(), label: "Golang" },
+  { value: nanoid(), label: "Java" },
+  { value: nanoid(), label: "Kotlin" },
+  { value: nanoid(), label: "C#" },
+  { value: nanoid(), label: "Swift" },
+  { value: nanoid(), label: "Rust" },
+  { value: nanoid(), label: "Ruby" },
+  { value: nanoid(), label: "C/C++" },
+  { value: nanoid(), label: "TStudy" },
 ];
