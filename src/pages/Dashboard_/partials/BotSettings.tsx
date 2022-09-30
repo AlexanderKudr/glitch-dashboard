@@ -14,6 +14,7 @@ export const BotSettings = () => {
   return (
     <div className="bot-settings">
       <h3>BOT SETTINGS</h3>
+      <Button className="btn-primary">Test Global Styles</Button>
       <div className="inputs-checkboxes">
         <Checkbox text={"Make commands moderator only"} />
         <Checkbox text={"Disable warnings for disabled commands/plugins"} />

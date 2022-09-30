@@ -1,0 +1,29 @@
+.btn {
+    border: none;
+    padding: 5px 10px 5px 10px;
+    margin-block-end: 10px;
+    border-radius: 5px;
+    &-primary {
+        
+    }
+    &-secondary {
+
+    }
+    &-save {
+
+    }
+}
+
+
+
+.save-btn{
+   color: var(--w);
+    background-color: var(--inputs-bg);
+    transition: background-color 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--inputs-bg-hover);
+      transition: background-color 0.3s;
+    }
+}
+ 

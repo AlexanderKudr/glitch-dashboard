@@ -1,4 +1,3 @@
-import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import { Dashboard } from "./pages/Dashboard_/Dashboard";
 import { Plugins } from "./pages/Plugins_/Plugins";
@@ -7,8 +6,11 @@ import { Logs } from "./pages/Logs_/Logs";
 import { useTheme } from "./hooks/useTheme";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import "bulma/css/bulma.css";
+import "./App.scss";
+import "./sass/utils/helpers.scss";
 
 export const App = () => {
+  
   const { themes, currentTheme } = useTheme();
 
   return (

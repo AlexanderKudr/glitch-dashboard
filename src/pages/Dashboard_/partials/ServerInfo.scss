@@ -1,5 +1,3 @@
-@use "../../../sass/variables.scss" as v;
-@use "../../../sass/themes.scss" as t;
 .serv-info {
   width: 50vw; //temporarely
   display: flex;
@@ -10,7 +8,7 @@
   border-radius: 10px;
   margin-bottom: 10px;
   color: var(--logo-text);
-  font-family: v.$Mainfont;
+  //font-family: v.$Mainfont;
   box-shadow: 0 0 2px 0px var(--shadow-bg);
   .header {
     display: flex;
