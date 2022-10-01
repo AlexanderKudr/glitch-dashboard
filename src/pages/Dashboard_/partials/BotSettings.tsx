@@ -4,8 +4,8 @@ import { Dropdown } from "../../../components/Dropdown/Dropdown";
 import { channels } from "../utils/Channels";
 import { roles } from "../utils/ManagerRoles";
 import { Tip } from "../../../components/Tip/Tip";
-import {Button} from '@mantine/core';
 import "./BotSettings.scss";
+import "../../../sass/components/button.scss";
 
 export const BotSettings = () => {
   const [role, setRole] = useState<string | null>(null);
@@ -14,7 +14,6 @@ export const BotSettings = () => {
   return (
     <div className="bot-settings">
       <h3>BOT SETTINGS</h3>
-      <Button className="btn-primary">Test Global Styles</Button>
       <div className="inputs-checkboxes">
         <Checkbox text={"Make commands moderator only"} />
         <Checkbox text={"Disable warnings for disabled commands/plugins"} />
@@ -52,7 +51,7 @@ export const BotSettings = () => {
           />
         </div>
       </div>
-      <button className="save-btn">Save</button>
+      <button className="btn-save">Save</button>
     </div>
   );
 };

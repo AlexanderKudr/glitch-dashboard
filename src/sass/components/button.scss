@@ -1,5 +1,25 @@
+@use "../utils/variables.scss" as v;
+%main-styles {
+  font-family: v.$Mainfont;
+  font-weight: 500;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--w);
+  background-color: var(--inputs-bg);
+  transition: background-color 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--inputs-bg-hover);
+    transition: background-color 0.3s;
+  }
+}
 .btn {
-    &-primary {
-        color: red; 
-    }
+  &-secondary {
+    @extend %main-styles;
+  }
+  &-save {
+    @extend %main-styles;
+    margin-bottom: 10px;
+  }
 }
