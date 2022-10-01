@@ -4,9 +4,14 @@ import { PluginCard } from "../../components/PluginCard/PluginCard";
 import { useStyles } from "./Plugins.styles";
 import { plugins } from "./utils/PluginsData";
 
-export const Plugins = () => {
+export const Plugins = async () => {
 
   const { classes } = useStyles();
+
+  // how to call the plugins api
+  // const response = await fetch("http://localhost:3000/api/plugins")
+  // const apiPlugins = await response.json();
+  // console.log("API PLUGINS", apiPlugins)
 
   const cards = plugins.map(({description, title,commands, settings}) => {
     return (
