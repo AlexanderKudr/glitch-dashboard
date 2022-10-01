@@ -5,7 +5,6 @@ import { Commands } from "./pages/Commands_/Commands";
 import { Logs } from "./pages/Logs_/Logs";
 import { useTheme } from "./hooks/useTheme";
 import { Sidebar } from "./components/Sidebar/Sidebar";
-import "bulma/css/bulma.css";
 import "./App.scss";
 import "./sass/utils/helpers.scss";
 

@@ -10,7 +10,7 @@ export const Plugins = () => {
 
   const cards = plugins.map(({ description, title, commands, settings }) => {
     return (
-      <Grid.Col span={5} key={title}>
+      <Grid.Col md={6} lg={3} key={title}>
         <PluginCard
           title={title}
           description={description}
