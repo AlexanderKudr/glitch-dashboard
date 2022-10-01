@@ -7,7 +7,6 @@ import { useState } from "react";
 import { Tooltip, Button } from "@mantine/core";
 
 export const ServerInfo = () => {
-  
   const { themeFunc } = useTheme();
   const modalText = `You can ask kynoshi#7193
   in the discord about the bot
@@ -20,7 +19,11 @@ export const ServerInfo = () => {
     "Voice Channels:",
     "Roles:",
   ];
-  const infoList = serverInfo.map((info, index) => <li key={index}>{info}</li>);
+  const infoList = serverInfo.map((info, index) => (
+    <li style={{ listStyle: "none" }} key={index}>
+      {info}
+    </li>
+  ));
 
   const clipboard = useClipboard({ timeout: 500 });
   let timeoutref: number;
@@ -37,7 +40,7 @@ export const ServerInfo = () => {
   };
   return (
     <main className="serv-info">
-      <h1 className="header">SERVER INFO</h1>
+      <h3 className="header">SERVER INFO</h3>
       <div className="info-other">
         <div className="info">
           <ul>{infoList}</ul>

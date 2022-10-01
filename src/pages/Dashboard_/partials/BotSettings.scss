@@ -8,18 +8,20 @@
   justify-content: center;
   padding-top: 10px;
   background-color: var(--secondary-bg);
-  border-radius: 10px;
+  border-radius: 5px;
   margin-bottom: 10px;
   align-items: center;
   padding: 30px;
   color: var(--logo-text);
   font-family: v.$Mainfont;
   box-shadow: 0 0 2px 0px var(--shadow-bg);
-  .inputs-checkboxes {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px 0;
-    justify-content: center;
+  .mantine-Checkbox-label {
+    color: var(--secondary-text);
+    width: 150px;
+  }
+  .mantine-Checkbox-input,
+  .mantine-Checkbox-label {
+    cursor: pointer;
   }
   .inputs-texts {
     align-items: flex-start;

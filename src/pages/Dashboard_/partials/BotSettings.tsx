@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Checkbox } from "../../../components/Checkbox/Checkbox";
+// import { Checkbox } from "../../../components/Checkbox/Checkbox";
 import { Dropdown } from "../../../components/Dropdown/Dropdown";
 import { channels } from "../utils/Channels";
 import { roles } from "../utils/ManagerRoles";
 import { Tip } from "../../../components/Tip/Tip";
+import { Checkbox } from "@mantine/core";
 import "./BotSettings.scss";
 import "../../../sass/components/button.scss";
 
@@ -14,9 +15,19 @@ export const BotSettings = () => {
   return (
     <div className="bot-settings">
       <h3>BOT SETTINGS</h3>
-      <div className="inputs-checkboxes">
-        <Checkbox text={"Make commands moderator only"} />
-        <Checkbox text={"Disable warnings for disabled commands/plugins"} />
+      <div className="checkboxes">
+        <Checkbox.Group>
+          <Checkbox
+            label="Make commands moderator only"
+            value="commands"
+            color="grape"
+          />
+          <Checkbox
+            label="Disable warnings for disabled commands"
+            value="warnings"
+            color="grape"
+          />
+        </Checkbox.Group>
       </div>
       <div className="inputs-texts">
         <div className="command-prefix">
