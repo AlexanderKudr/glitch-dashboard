@@ -30,7 +30,7 @@ export const Plugins = () => {
         <Text color="var(--logo-text)" size="xl" weight={600}>
           Plugins
         </Text>
-        <TextInput className="test" placeholder="Search"/>
+        <TextInput className="search" placeholder="Search"/>
         <div className="cards">
           <Grid grow justify="flex-start">
             {cards}
