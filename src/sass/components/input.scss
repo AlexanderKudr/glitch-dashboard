@@ -3,14 +3,7 @@
   color: white;
   outline: none;
 }
-.search {
+.search input {
   background-color: transparent;
-  color: white;
-  outline: none;
-}
-.test input {
-  color: red !important;
-  background-color: transparent;
-  color: white;
-  outline: none;
+  border: 1px solid var(--divider-bl);
 }

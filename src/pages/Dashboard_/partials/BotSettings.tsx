@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import { Checkbox } from "../../../components/Checkbox/Checkbox";
 import { Dropdown } from "../../../components/Dropdown/Dropdown";
 import { channels } from "../utils/Channels";
 import { roles } from "../utils/ManagerRoles";

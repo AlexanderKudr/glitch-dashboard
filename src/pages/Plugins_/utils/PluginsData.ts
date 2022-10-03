@@ -1,9 +1,12 @@
+// import { useState } from "react";
+
 export interface PluginsCardProps {
   title: string;
   description: string;
   settings?: string;
   commands?: string;
 }
+
 
 export const plugins: PluginsCardProps[] = [
   {
