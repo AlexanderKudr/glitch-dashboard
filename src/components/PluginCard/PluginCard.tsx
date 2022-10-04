@@ -1,13 +1,17 @@
-import { Button, Card, Switch, Text, Group, Modal, Select } from "@mantine/core";
-import { PluginsCardProps } from "../../pages/Plugins_/utils/PluginsData";
+import { useState } from "react";
+import { Button, Card, Switch, Text, Group, Modal } from "@mantine/core";
+import { PluginsCardProps } from "../../utils/PluginsData";
+import { BiMenuAltRight } from "react-icons/bi";
+import { AiTwotoneSetting } from "react-icons/ai";
+import { Dropdown } from "../Dropdown/Dropdown";
+import { channels } from "../../utils/Channels";
+import { roles } from "../../utils/ManagerRoles";
+import "../../sass/components/dropdown.scss";
 import "../../sass/components/button.scss";
 import "../../sass/components/card.scss";
 import "../../sass/utils/themes.scss";
-import { BiMenuAltRight } from "react-icons/bi";
-import { AiTwotoneSetting } from "react-icons/ai";
-import { useState } from "react";
-import { Dropdown } from "../Dropdown/Dropdown";
-import { channels } from "../../pages/Dashboard_/utils/Channels";
+import "../../sass/components/ModalPlugin.scss";
+import "../../sass/components/Switch.scss";
 
 export const PluginCard = ({
   title,
@@ -15,8 +19,11 @@ export const PluginCard = ({
   settings,
   commands,
 }: PluginsCardProps) => {
-  const [opened, setOpened] = useState<boolean>(false);
-  const [ch, setCh] = useState<string | null>(null);
+  const [settingsOpened, setSettingsOpened] = useState<boolean>(false);
+  const [commandsOpened, setCommandsOpened] = useState<boolean>(false);
+  const [allowedChannels, setAllowedChannels] = useState<string | null>(null);
+  const [allowedRoles, setAllowedRoles] = useState<string | null>(null);
+
   return (
     <>
       <Card
@@ -38,13 +45,19 @@ export const PluginCard = ({
           </Text>
           <Group>
             {settings && (
-              <Button onClick={() => setOpened(true)} className="btn-secondary">
+              <Button
+                onClick={() => setSettingsOpened(true)}
+                className="btn-secondary"
+              >
                 <AiTwotoneSetting style={{ paddingRight: "2px" }} />
                 settings
               </Button>
             )}
             {commands && (
-              <Button className="btn-secondary">
+              <Button
+                onClick={() => setCommandsOpened(true)}
+                className="btn-secondary"
+              >
                 <BiMenuAltRight style={{ paddingRight: "2px" }} />
                 commands
               </Button>
@@ -54,17 +67,46 @@ export const PluginCard = ({
       </Card>
       <Modal
         centered
-        onClose={() => setOpened(false)}
-        opened={opened}
-        title="Additional Permissions"
+        onClose={() => setSettingsOpened(false)}
+        opened={settingsOpened}
+        title={`Additional Permissions (${title})`}
       >
-        {title}
-          <Select
-            data={channels}
-            value={ch}
-            onChange={setCh}
-            placeholder="ignored channels"
-          />
+        <Dropdown
+          searchable
+          label="allowed channels"
+          className="dropdown"
+          data={channels}
+          value={allowedChannels}
+          onChange={setAllowedChannels}
+        />
+        <Dropdown
+          searchable
+          label="allowed roles"
+          className="dropdown"
+          data={roles}
+          value={allowedRoles}
+          onChange={setAllowedRoles}
+        />
+      </Modal>
+      <Modal
+      withCloseButton={false}
+        className="plugin-modal"
+        centered
+        onClose={() => setCommandsOpened(false)}
+        opened={commandsOpened}
+        title={`Commands (${title})`}
+      >
+        {commands?.map(({ command }) => {
+          return (
+            <Switch
+              key={command}
+              label={command}
+              className="switch"
+              color="indigo"
+              mb="sm"
+            />
+          );
+        })}
       </Modal>
     </>
   );

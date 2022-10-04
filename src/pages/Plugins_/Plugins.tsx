@@ -1,16 +1,14 @@
-import { Input, TextInput } from "@mantine/core";
+import { TextInput } from "@mantine/core";
 import { useState } from "react";
 import { Text } from "@mantine/core";
 import { PluginCard } from "../../components/PluginCard/PluginCard";
-import { useStyles } from "./Plugins.styles";
-import { plugins } from "./utils/PluginsData";
-import { Grid } from "@mantine/core";
+import { plugins } from "../../utils/PluginsData";
+import { Grid, Box, Title } from "@mantine/core";
 import "../../sass/utils/themes.scss";
-import "../../sass/components/input.scss";
+import "../../sass/components/input-text.scss";
+
 
 export const Plugins = () => {
-  const { classes } = useStyles();
-
   const cards = plugins.map(({ description, title, commands, settings }) => {
     return (
       <Grid.Col key={title} md={6} lg={3}>
@@ -33,7 +31,12 @@ export const Plugins = () => {
   };
   return (
     <>
-      <main className={classes.main}>
+      <Box component="main" sx={(theme) => ({
+        padding: "2rem",
+        "> :not(:last-child)": {
+            marginBlockEnd: "1.5rem",
+        }
+      })}>
         <Text color="var(--logo-text)" size="xl" weight={600}>
           Plugins
         </Text>
@@ -42,7 +45,7 @@ export const Plugins = () => {
           {cards}
         </Grid>
         <button onClick={getData}>get data</button>
-      </main>
+      </Box>
     </>
   );
 };

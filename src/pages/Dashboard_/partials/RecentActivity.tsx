@@ -1,5 +1,5 @@
 import { TableComp } from "../../../components/Table/TableComp";
-import { activities } from "../utils/RecentActivities";
+import { activities } from "../../../utils/RecentActivities";
 import "./RecentActivity.scss";
 export const RecentActivity = () => {
   return (

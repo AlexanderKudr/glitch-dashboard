@@ -1,6 +1,6 @@
 import "./TableComp.scss";
 import { Table } from "@mantine/core";
-import { RecentActivities } from "../../pages/Dashboard_/utils/RecentActivities";
+import { RecentActivities } from "../../utils/RecentActivities";
 
 interface TableInt {
   tableContent: RecentActivities[];

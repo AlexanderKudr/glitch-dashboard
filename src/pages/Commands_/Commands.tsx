@@ -1,10 +1,12 @@
-import { ServerInfo } from "../Dashboard_/partials/ServerInfo";
+import { Text } from "@mantine/core";
 import "./Commands.scss";
 
 export const Commands = () => {
   return (
     <>
-      <ServerInfo />
+      <Text color="var(--logo-text)" size="xl" weight={600}>
+        Commands
+      </Text>
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Dropdown } from "../../../components/Dropdown/Dropdown";
-import { channels } from "../utils/Channels";
-import { roles } from "../utils/ManagerRoles";
+import { channels } from "../../../utils/Channels";
+import { roles } from "../../../utils/ManagerRoles";
 import { Tip } from "../../../components/Tip/Tip";
 import { Checkbox } from "@mantine/core";
 import "./BotSettings.scss";
