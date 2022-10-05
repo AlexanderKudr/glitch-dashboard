@@ -1,12 +1,19 @@
-import { Text } from "@mantine/core";
+import { Text, Title, Box, Button } from "@mantine/core";
 import "./Commands.scss";
+
 
 export const Commands = () => {
   return (
     <>
-      <Text color="var(--logo-text)" size="xl" weight={600}>
+      <Title p="sm" color="var(--logo-text)" order={3} weight={600}>
         Commands
-      </Text>
+      </Title>
+      <Button m="sm" className="btn-commands">
+        Enable all
+      </Button>
+      <Button m="sm" className="btn-commands">
+        Disable all
+      </Button>
     </>
   );
 };

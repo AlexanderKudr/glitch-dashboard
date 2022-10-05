@@ -22,4 +22,9 @@
     @extend %main-styles;
     margin-bottom: 10px;
   }
+  &-commands {
+    @extend %main-styles;
+    border-radius: 3px;
+    width: 120px;
+  }
 }

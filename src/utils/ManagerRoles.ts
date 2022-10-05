@@ -1,5 +1,5 @@
-import { SelectItem } from '@mantine/core'
-import {nanoid} from 'nanoid'
+import { SelectItem } from "@mantine/core";
+import { nanoid } from "nanoid";
 
 export const roles: Array<SelectItem> = [
   { value: nanoid(), label: "Server Booster" },

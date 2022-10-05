@@ -1,14 +1,20 @@
 import { useState } from "react";
-import { Button, Card, Switch, Text, Group, Modal } from "@mantine/core";
+import {
+  MultiSelect,
+  Button,
+  Card,
+  Switch,
+  Text,
+  Group,
+  Modal,
+} from "@mantine/core";
 import { PluginsCardProps } from "../../utils/PluginsData";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiTwotoneSetting } from "react-icons/ai";
-import { Dropdown } from "../Dropdown/Dropdown";
 import { channels } from "../../utils/Channels";
 import { roles } from "../../utils/ManagerRoles";
 import "../../sass/components/dropdown.scss";
 import "../../sass/components/button.scss";
-import "../../sass/components/card.scss";
 import "../../sass/utils/themes.scss";
 import "../../sass/components/ModalPlugin.scss";
 import "../../sass/components/Switch.scss";
@@ -21,8 +27,8 @@ export const PluginCard = ({
 }: PluginsCardProps) => {
   const [settingsOpened, setSettingsOpened] = useState<boolean>(false);
   const [commandsOpened, setCommandsOpened] = useState<boolean>(false);
-  const [allowedChannels, setAllowedChannels] = useState<string | null>(null);
-  const [allowedRoles, setAllowedRoles] = useState<string | null>(null);
+  const [allowedChannels, setAllowedChannels] = useState<string[]>([]);
+  const [allowedRoles, setAllowedRoles] = useState<string[]>([]);
 
   return (
     <>
@@ -71,7 +77,7 @@ export const PluginCard = ({
         opened={settingsOpened}
         title={`Additional Permissions (${title})`}
       >
-        <Dropdown
+        <MultiSelect
           searchable
           label="allowed channels"
           className="dropdown"
@@ -79,7 +85,7 @@ export const PluginCard = ({
           value={allowedChannels}
           onChange={setAllowedChannels}
         />
-        <Dropdown
+        <MultiSelect
           searchable
           label="allowed roles"
           className="dropdown"
@@ -89,7 +95,7 @@ export const PluginCard = ({
         />
       </Modal>
       <Modal
-      withCloseButton={false}
+        withCloseButton={false}
         className="plugin-modal"
         centered
         onClose={() => setCommandsOpened(false)}
