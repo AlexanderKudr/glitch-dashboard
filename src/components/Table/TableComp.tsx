@@ -7,11 +7,11 @@ interface TableInt {
 }
 
 export const TableComp = ({ tableContent }: TableInt) => {
-  const rows = tableContent.map((activity) => (
-    <tr key={activity.id}>
-      <td>{activity.date}</td>
-      <td>{activity.user}</td>
-      <td>{activity.action}</td>
+  const rows = tableContent.map(({id, date, user, action}) => (
+    <tr key={id}>
+      <td>{date}</td>
+      <td>{user}</td>
+      <td>{action}</td>
     </tr>
   ));
   return (

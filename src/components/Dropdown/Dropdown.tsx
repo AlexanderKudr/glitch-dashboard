@@ -2,7 +2,7 @@ import { Select, SelectProps } from "@mantine/core";
 
 type Props = Pick<SelectProps, "data">;
 
-export const Dropdown = (props: Props) => {
+export const Dropdown = (props: SelectProps) => {
   return (
     <Select
       transition="pop-top-left"
@@ -12,4 +12,3 @@ export const Dropdown = (props: Props) => {
     />
   );
 };
-
