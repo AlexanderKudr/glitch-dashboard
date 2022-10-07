@@ -1,13 +1,13 @@
 export interface PluginsCardProps {
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
   settings?: string;
   commands: Command[];
 }
 
 export interface Command {
   command: string;
-  description?: string;
+  description: string;
   help?: string;
 }
 
@@ -19,27 +19,27 @@ export const plugins: PluginsCardProps[] = [
     commands: [
       {
         command: "helloworld",
-        help: "help",
+        help: "in progress",
         description: "Replies Hello World in 3 different languages.",
       },
       {
         command: "modal_test",
-        help: "help",
+        help: "in progress",
         description: "Test for creating a modal.",
       },
       {
         command: "ping",
-        help: "help",
+        help: "in progress",
         description: "Replies with pong.",
       },
       {
         command: "stats",
-        help: "help",
+        help: "in progress",
         description: "Shows some server stats.",
       },
       {
         command: "yehaw",
-        help: "help",
+        help: "in progress",
         description: "Printing Yehaw!",
       },
     ],

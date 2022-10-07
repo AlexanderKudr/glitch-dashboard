@@ -1,24 +1,16 @@
-import { Text, Title, Box, Button, Grid } from "@mantine/core";
+import { Title, Button, Grid } from "@mantine/core";
 import { CommandCard } from "../../components/CommandCard/CommandCard";
-import { Command, plugins } from "../../utils/PluginsData";
-import "./Commands.scss";
+import { plugins } from "../../utils/PluginsData";
+import "../../sass/components/button.scss";
 
 export const Commands = () => {
-
   const result = plugins
-  .map(({ commands }) => commands)
-  .flatMap((command) => command)
-  .map(({  description, command, help }) => (
-    <Grid.Col key={command} md={6} lg={3}>
-      <CommandCard
-     
-        description={description}
-        command={command}
-        help={help}
-      />
-    </Grid.Col>
-  ));
-
+    .flatMap(({ commands }) => commands)
+    .map(({ description, command, help }) => (
+      <Grid.Col key={command} md={6} lg={6}>
+        <CommandCard description={description} command={command} help={help} />
+      </Grid.Col>
+    ));
   return (
     <>
       <Title p="sm" color="var(--logo-text)" order={3} weight={600}>

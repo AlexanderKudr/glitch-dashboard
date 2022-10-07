@@ -3,6 +3,12 @@
     color: var(--text);
   }
   .mantine-Switch-track {
-    color: black;
+    background-color: var(--main-bg);
+    border: 1px solid var(--divider-bl);
+    transition: all 0.2s;
+  }
+  input:checked+.mantine-Switch-track {
+    background-color: var(--divider-bl);
+    border: transparent;
   }
 }

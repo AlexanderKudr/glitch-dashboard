@@ -42,7 +42,7 @@ export const PluginCard = ({
         <Card.Section p="sm">
           <Group position="apart">
             <Text color="var(--logo-text)">{title}</Text>
-            <Switch color="indigo"></Switch>
+            <Switch className="switch"></Switch>
           </Group>
         </Card.Section>
         <Card.Section p="sm">
@@ -71,6 +71,7 @@ export const PluginCard = ({
           </Group>
         </Card.Section>
       </Card>
+      {/* modal for settings */}
       <Modal
         centered
         onClose={() => setSettingsOpened(false)}
@@ -94,6 +95,8 @@ export const PluginCard = ({
           onChange={setAllowedRoles}
         />
       </Modal>
+
+      {/* modal for commands */}
       <Modal
         withCloseButton={false}
         className="plugin-modal"

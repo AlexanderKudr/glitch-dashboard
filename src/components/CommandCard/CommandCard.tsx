@@ -1,6 +1,9 @@
-import { Card, Text, Switch, Group } from "@mantine/core";
-import { Command, PluginsCardProps } from "../../utils/PluginsData";
+import { Card, Text, Switch, Group, Button, Modal } from "@mantine/core";
+import { Command } from "../../utils/PluginsData";
+import { useState } from "react";
+import "../../sass/components/Switch.scss";
 export const CommandCard = ({ command, description, help }: Command) => {
+  const [helpOpened, setHelpOpened] = useState<boolean>(false);
   return (
     <>
       <Card
@@ -13,16 +16,32 @@ export const CommandCard = ({ command, description, help }: Command) => {
         <Card.Section p="sm">
           <Group position="apart">
             <Text color="var(--logo-text)">{command}</Text>
-            <Switch color="indigo"></Switch>
+            <Switch className="switch" color="indigo"></Switch>
           </Group>
         </Card.Section>
         <Card.Section p="sm">
           <Text mb="sm" color="var(--secondary-text)">
             {description}
-            {help}
           </Text>
+          {help && (
+            <Button
+              onClick={() => setHelpOpened(true)}
+              className="btn-secondary"
+            >
+              help
+            </Button>
+          )}
         </Card.Section>
       </Card>
+      <Modal
+        withCloseButton={false}
+        className="plugin-modal"
+        centered
+        onClose={() => setHelpOpened(false)}
+        opened={helpOpened}
+      >
+        {help}
+      </Modal>
     </>
   );
 };

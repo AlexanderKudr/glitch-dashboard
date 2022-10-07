@@ -15,7 +15,7 @@ export const TableComp = ({ tableContent }: TableInt) => {
     </tr>
   ));
   return (
-    <Table >
+    <Table>
       <thead className="tets">
         <tr className="tets">
           <th>
