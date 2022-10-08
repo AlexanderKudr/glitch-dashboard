@@ -1,13 +1,13 @@
 import { TextInput } from "@mantine/core";
-import { useState } from "react";
-import { Text } from "@mantine/core";
 import { PluginCard } from "../../components/PluginCard/PluginCard";
 import { plugins } from "../../utils/PluginsData";
-import { Grid, Box, Title } from "@mantine/core";
+import { Grid, Title } from "@mantine/core";
 import "../../sass/utils/themes.scss";
 import "../../sass/components/input-text.scss";
+import { useState, useEffect } from "react";
 
 export const Plugins = () => {
+  const [data, setData] = useState([]);
   const cards = plugins.map(({ description, title, commands, settings }) => {
     return (
       <Grid.Col key={title} md={6} lg={3}>
@@ -21,23 +21,29 @@ export const Plugins = () => {
     );
   });
 
-  const [pluginData, setPluginData] = useState([]);
-
   const getData = async () => {
+    const login = import.meta.env.VITE_LOGIN;
+    const pass = import.meta.env.VITE_PASSWORD;
+
+    const credentials = `${login}:${pass}`;
+
     try {
-      const response = await fetch("https://glitchfiles.com/api/plugins", {
-        method: "POST",
-        body: JSON.stringify({
-          username: "",
-          password: "",
-        }),
+      const response = await fetch(import.meta.env.VITE_URL, {
+        headers: {
+          Authorization: `Basic ${credentials}`,
+        },
       });
       const result = await response.json();
-      console.log(result);
+      setData(result)
+      
     } catch (err: any) {
       console.log("ERROR: ", err);
     }
-  };
+  }; 
+useEffect(() => {
+  getData()
+  console.log(data)
+}, []);
   return (
     <>
       <Title p="sm" color="var(--logo-text)" order={3} weight={600}>

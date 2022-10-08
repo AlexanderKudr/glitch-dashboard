@@ -1,15 +1,17 @@
+import { useEffect } from "react";
 export interface PluginsCardProps {
   title: string;
   description: string;
   settings?: string;
   commands: Command[];
 }
-
 export interface Command {
   command: string;
   description: string;
   help?: string;
 }
+
+
 
 export const plugins: PluginsCardProps[] = [
   {
