@@ -3,12 +3,12 @@ export interface PluginsCardProps {
   title: string;
   description: string;
   settings?: string;
-  commands: Command[];
+  commands: Command[]; //fix types when commands aren't necessary
 }
 export interface Command {
   command: string;
   description: string;
-  help?: string;
+  help: string;
 }
 
 

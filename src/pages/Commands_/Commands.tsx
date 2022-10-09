@@ -1,6 +1,6 @@
 import { Title, Button, Grid } from "@mantine/core";
 import { CommandCard } from "../../components/CommandCard/CommandCard";
-import { plugins } from "../../utils/PluginsData";
+import { Command, plugins } from "../../utils/PluginsData";
 import "../../sass/components/button.scss";
 
 export const Commands = () => {

@@ -34,16 +34,17 @@ export const Plugins = () => {
         },
       });
       const result = await response.json();
-      setData(result)
-      
+      setData(result);
     } catch (err: any) {
       console.log("ERROR: ", err);
     }
-  }; 
-useEffect(() => {
-  getData()
-  console.log(data)
-}, []);
+  };
+  useEffect(() => {
+    getData();
+    setTimeout(() => {
+      console.log(data);
+    }, 3000);
+  }, []);
   return (
     <>
       <Title p="sm" color="var(--logo-text)" order={3} weight={600}>
