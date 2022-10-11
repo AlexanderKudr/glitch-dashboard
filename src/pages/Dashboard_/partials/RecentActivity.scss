@@ -1,6 +1,7 @@
 @use "../../../sass/utils/variables.scss" as v;
 .recent-activity {
-  width: 50vw; //temporarely
+  width: 97%;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;

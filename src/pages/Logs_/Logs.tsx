@@ -4,24 +4,25 @@ import { activities } from "../../utils/RecentActivities";
 import { useState } from "react";
 export const Logs = () => {
   //test
-  const [artists, setArtists] = useState([
-    { id: 0, name: "Marta Colvin Andrade" },
-    { id: 1, name: "Lamidi Olonade Fakeye" },
-    { id: 2, name: "Louise Nevelson" },
-  ]);
-  const artistList = artists.map(({ id, name }) => {
-    return (
-      <li key={id}>{name}
-        <button onClick={() => {filterHandle(id)}}>
-          Delete
-        </button>
-      </li>
-    );
-  });
-  const filterHandle = (id: any) => {
-    setArtists(artists.filter((a) => a.id !== id));
-  };
+  // const [artists, setArtists] = useState([
+  //   { id: 0, name: "Marta Colvin Andrade" },
+  //   { id: 1, name: "Lamidi Olonade Fakeye" },
+  //   { id: 2, name: "Louise Nevelson" },
+  // ]);
+  // const artistList = artists.map(({ id, name }) => {
+  //   return (
+  //     <li key={id}>{name}
+  //       <button onClick={() => {filterHandle(id)}}>
+  //         Delete
+  //       </button>
+  //     </li>
+  //   );
+  // });
+  // const filterHandle = (id: any) => {
+  //   setArtists(artists.filter((a) => a.id !== id));
+  // };
   //test
+  
   return (
     <>
       <Title p="sm" color="var(--logo-text)" order={3} weight={600}>
@@ -41,10 +42,6 @@ export const Logs = () => {
           <TableComp tableContent={activities} />
         </Grid.Col>
       </Grid>
-      <div className="test">
-        <h1>Inspiring sculptors:</h1>
-        <ul>{artistList}</ul>
-      </div>
     </>
   );
 };

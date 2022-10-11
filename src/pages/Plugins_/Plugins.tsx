@@ -1,6 +1,5 @@
 import { TextInput } from "@mantine/core";
 import { PluginCard } from "../../components/PluginCard/PluginCard";
-import { plugins } from "../../utils/PluginsData";
 import { Grid, Title, Loader, Center } from "@mantine/core";
 import "../../sass/utils/themes.scss";
 import "../../sass/components/input-text.scss";
@@ -8,7 +7,6 @@ import { useState, useEffect } from "react";
 
 export const Plugins = () => {
   const [pluginData, setPlugindata] = useState([]);
-  const [commands, setCommands] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const getData = async () => {
@@ -32,18 +30,22 @@ export const Plugins = () => {
     }
   };
 
-  const cards2 = pluginData.map(({ description, name, commands, settings }) => {
-    return (
-      <Grid.Col key={name} md={3} lg={3}>
-        <PluginCard
-          title={name}
-          description={description}
-          commands={commands}
-          settings={settings}
-        />
-      </Grid.Col>
-    );
-  });
+  const pluginCards = pluginData.map(
+    ({ description, name, commands, settings, isEnabled, uuid }) => {
+      return (
+        <Grid.Col key={name} md={3} lg={3}>
+          <PluginCard
+            name={name}
+            description={description}
+            commands={commands}
+            settings={settings}
+            isEnabled={isEnabled}
+            uuid={uuid}
+          />
+        </Grid.Col>
+      );
+    }
+  );
   useEffect(() => {
     getData();
   }, []);
@@ -60,7 +62,7 @@ export const Plugins = () => {
             <Loader color="grape" size="xl" variant="bars" />
           </Center>
         ) : (
-          cards2
+          pluginCards
         )}
       </Grid>
     </>
