@@ -1,6 +1,18 @@
 .checkbox {
-  input:checked.mantine-Checkbox-input {
-    background-color: var(--purple);
-    border: 0;
+  input {
+    &:checked.mantine-Checkbox-input {
+      background-color: var(--purple);
+      border: 0;
+    }
+    // &:disabled+.mantine-Switch-track {
+    //   background-color: var(--main-bg);
+    //   border-color: var(--divider-bl);
+    //   cursor: not-allowed;
+    // }
   }
+}
+input:disabled + .mantine-Switch-track {
+  background-color: var(--main-bg);
+  border-color: var(--divider-bl);
+  cursor: not-allowed;
 }
