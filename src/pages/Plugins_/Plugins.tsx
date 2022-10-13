@@ -4,10 +4,11 @@ import { Grid, Title, Loader, Center } from "@mantine/core";
 import "../../sass/utils/themes.scss";
 import "../../sass/components/input-text.scss";
 import { useState, useEffect } from "react";
+import { getPlugins, type Plugin } from "../../lib/plugins";
 import axios from "axios";
 
 export const Plugins = () => {
-  const [pluginData, setPlugindata] = useState([]);
+  const [pluginData, setPlugindata] = useState<Plugin[]>([]);
   const [loading, setLoading] = useState(false);
 
   const getData = async () => {
@@ -17,17 +18,18 @@ export const Plugins = () => {
 
     try {
       setLoading(true);
-      const response = await axios.get(import.meta.env.VITE_URL_PlUGINS, {
-        headers: {
-          Authorization: `Basic ${credentials}`,
-        },
-      });
-      setPlugindata(response.data);
+      //const response = await axios.get("https://glitchfiles.com/api/plugins", {
+      //headers: {
+      //Authorization: `Basic ${credentials}`,
+      //},
+      //});
+      const data = await getPlugins();
+      setPlugindata(data);
       setLoading(false);
     } catch (err: any) {
       console.log("ERROR: ", err);
     }
-  }; 
+  };
 
   const pluginCards = pluginData.map(
     ({ description, name, isEnabled, uuid }) => {
