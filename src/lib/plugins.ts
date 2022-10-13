@@ -71,7 +71,6 @@ async function fakeNetwork(key?: string) {
     if (fakeCache[key]) {
       return;
     }
-
     fakeCache[key] = true;
   }
 

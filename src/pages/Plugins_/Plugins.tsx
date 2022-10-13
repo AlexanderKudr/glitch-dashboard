@@ -5,7 +5,7 @@ import "../../sass/utils/themes.scss";
 import "../../sass/components/input-text.scss";
 import { useState, useEffect } from "react";
 import { getPlugins, type Plugin } from "../../lib/plugins";
-import axios from "axios";
+
 
 export const Plugins = () => {
   const [pluginData, setPlugindata] = useState<Plugin[]>([]);
