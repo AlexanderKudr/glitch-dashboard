@@ -4,6 +4,7 @@ import { Grid, Title, Loader, Center } from "@mantine/core";
 import "../../sass/utils/themes.scss";
 import "../../sass/components/input-text.scss";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 export const Plugins = () => {
   const [pluginData, setPlugindata] = useState([]);
@@ -16,29 +17,27 @@ export const Plugins = () => {
 
     try {
       setLoading(true);
-      const response = await fetch(import.meta.env.VITE_URL, {
+      const response = await axios.get(import.meta.env.VITE_URL_PlUGINS, {
         headers: {
           Authorization: `Basic ${credentials}`,
         },
       });
-      const result = await response.json();
-      setPlugindata(result);
+      setPlugindata(response.data);
       setLoading(false);
-      console.log(pluginData);
     } catch (err: any) {
       console.log("ERROR: ", err);
     }
-  };
+  }; 
 
   const pluginCards = pluginData.map(
-    ({ description, name, commands, settings, isEnabled, uuid }) => {
+    ({ description, name, isEnabled, uuid }) => {
       return (
         <Grid.Col key={name} md={3} lg={3}>
           <PluginCard
             name={name}
             description={description}
-            commands={commands}
-            settings={settings}
+            // commands={commands}
+            // settings={settings}
             isEnabled={isEnabled}
             uuid={uuid}
           />

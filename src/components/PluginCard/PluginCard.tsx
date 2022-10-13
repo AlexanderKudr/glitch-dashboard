@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   MultiSelect,
   Button,
@@ -10,11 +10,9 @@ import {
 } from "@mantine/core";
 import { PluginsCardProps } from "../../utils/PluginsData";
 import { BiMenuAltRight } from "react-icons/bi";
-import { AiTwotoneSetting } from "react-icons/ai";
 import { channels } from "../../utils/Channels";
 import { roles } from "../../utils/ManagerRoles";
 import "../../sass/components/dropdown.scss";
-import "../../sass/components/button.scss";
 import "../../sass/utils/themes.scss";
 import "../../sass/components/ModalPlugin.scss";
 import "../../sass/components/Switch.scss";
@@ -23,8 +21,6 @@ import axios from "axios";
 export const PluginCard = ({
   name,
   description,
-  settings,
-  commands,
   isEnabled,
   uuid,
 }: PluginsCardProps) => {
@@ -33,44 +29,30 @@ export const PluginCard = ({
   const [allowedChannels, setAllowedChannels] = useState<string[]>([]);
   const [allowedRoles, setAllowedRoles] = useState<string[]>([]);
 
-  // const updatePluginCard = async () => {
-  //   const login = import.meta.env.VITE_LOGIN;
-  //   const pass = import.meta.env.VITE_PASSWORD;
-  //   const credentials = `${login}:${pass}`;
-  //   try {
-  //     const response = await fetch(`${import.meta.env.VITE_URL}/710e292e-856b-4151-a9c5-6414f542baf6`, {
-  //       method: "PUT",
-  //       headers: {
-  //         Authorization: `Basic ${credentials}`,
-  //       },
-  //       body:JSON.stringify({isEnabled: false,  name: "brainfuck", uuid: "710e292e-856b-4151-a9c5-6414f542baf6", description: "Convert normal language into gybrish stuff:)", })
-  //     });
-  //     const result = await response.json();
-  //     console.log(result)
-  //    console.log(JSON.stringify({uuid, isEnabled: !isEnabled, name, description, }))
-  //   } catch (err: any) {
-  //     console.log("ERROR: ", err);
-  //   }
-  // };
+  const [isEnabledInner, setIsEnabledInner] = useState<boolean>(isEnabled);
+  const [switchDisabled, setSwitchDisabled] = useState<boolean>(false);
 
   const updatePluginCard = async () => {
     const login = import.meta.env.VITE_LOGIN;
     const pass = import.meta.env.VITE_PASSWORD;
     const credentials = `${login}:${pass}`;
     try {
+      setIsEnabledInner((prevState) => !prevState);
+      setSwitchDisabled(state => !state)
       const response = await axios.put(
-        `${import.meta.env.VITE_URL}/${uuid}`,
+        `${import.meta.env.VITE_URL_PlUGINS}/${uuid}`,
         {
-          body: {
-            isEnabled: !isEnabled,
-            name,
-            uuid,
-            description,
-          },
-        }
+          isEnabled: !isEnabledInner,
+          name,
+          uuid,
+          description,
+        },
       );
-    } catch (err: any) {
-      console.log("ERROR: ", err.response);
+      setSwitchDisabled(state => !state)
+    } catch (err) {
+      if (err instanceof Error) {
+        console.log("ERROR: ", err.message);
+      }
     }
   };
 
@@ -88,11 +70,11 @@ export const PluginCard = ({
             <Text color="var(--logo-text)">{name}</Text>
 
             <Switch
-              onChange={() => updatePluginCard()}
-              checked={isEnabled}
+              onClick={() => updatePluginCard()}
+              checked={isEnabledInner}
               className="switch"
+              disabled={switchDisabled}
             />
-
           </Group>
         </Card.Section>
         <Card.Section p="sm">
@@ -100,7 +82,7 @@ export const PluginCard = ({
             {description}
           </Text>
           <Group>
-            {settings && (
+            {/* {settings && (
               <Button
                 onClick={() => setSettingsOpened(true)}
                 className="btn-secondary"
@@ -108,7 +90,7 @@ export const PluginCard = ({
                 <AiTwotoneSetting style={{ paddingRight: "2px" }} />
                 settings
               </Button>
-            )}
+            )} */}
 
             <Button
               onClick={() => setCommandsOpened(true)}
@@ -154,7 +136,7 @@ export const PluginCard = ({
         opened={commandsOpened}
         title={`Commands (${name})`}
       >
-        {commands?.map(({ command }) => {
+        {/* {commands?.map(({ command }) => {
           return (
             <Switch
               key={command}
@@ -164,7 +146,7 @@ export const PluginCard = ({
               mb="sm"
             />
           );
-        })}
+        })} */}
       </Modal>
     </>
   );

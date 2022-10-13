@@ -4,6 +4,7 @@ import { useState } from "react";
 import "../../sass/components/Switch.scss";
 export const CommandCard = ({ command, description, help }: Command) => {
   const [helpOpened, setHelpOpened] = useState<boolean>(false);
+  
   return (
     <>
       <Card
