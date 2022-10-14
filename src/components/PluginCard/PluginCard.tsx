@@ -15,8 +15,9 @@ import { roles } from "../../utils/ManagerRoles";
 import "../../sass/components/dropdown.scss";
 import "../../sass/utils/themes.scss";
 import "../../sass/components/ModalPlugin.scss";
-import "../../sass/components/Switch.scss";
+import "../../sass/components/Toggle.scss";
 import axios from "axios";
+import { updatePlugin } from "../../lib/plugins"
 
 export const PluginCard = ({
   name,
@@ -39,15 +40,16 @@ export const PluginCard = ({
     try {
       setIsEnabledInner((prevState) => !prevState);
       setSwitchDisabled(state => !state)
-      const response = await axios.put(
-        `${import.meta.env.VITE_URL_PlUGINS}/${uuid}`,
-        {
-          isEnabled: !isEnabledInner,
-          name,
-          uuid,
-          description,
-        },
-      );
+      // const response = await axios.put(
+      //   `${import.meta.env.VITE_URL_PlUGINS}/${uuid}`,
+      //   {
+      //     isEnabled: !isEnabledInner,
+      //     name,
+      //     uuid,
+      //     description,
+      //   },
+      // );
+      const data = await updatePlugin(uuid, {isEnabled:!isEnabledInner});
       setSwitchDisabled(state => !state)
     } catch (err) {
       if (err instanceof Error) {
@@ -72,7 +74,7 @@ export const PluginCard = ({
             <Switch
               onClick={() => updatePluginCard()}
               checked={isEnabledInner}
-              className="switch"
+              className="toggle-plugin"
               disabled={switchDisabled}
             />
           </Group>

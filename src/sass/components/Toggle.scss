@@ -1,0 +1,32 @@
+.toggle {
+  &-plugin {
+    .mantine-Switch-label {
+      color: var(--text);
+    }
+    .mantine-Switch-track {
+      cursor: pointer;
+      background-color: var(--main-bg);
+      border: 1px solid var(--divider-bl);
+      transition: all 0.2s;
+    }
+    .mantine-Switch-thumb {
+      transition: all 0.3s;
+    }
+    input {
+      &:checked + .mantine-Switch-track {
+        background-color: var(--main-bg);
+        border: 1px solid var(--divider-bl);
+        .mantine-Switch-thumb {
+          background-color: var(--logo-text);
+          border: none;
+          transition: all 0.3s;
+        }
+      }
+      &:disabled + .mantine-Switch-track {
+        background-color: var(--main-bg);
+        border-color: var(--divider-bl);
+        cursor: default;
+      }
+    }
+  }
+}

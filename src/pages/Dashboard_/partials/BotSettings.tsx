@@ -6,7 +6,7 @@ import { Tip } from "../../../components/Tip/Tip";
 import { Checkbox } from "@mantine/core";
 import "./BotSettings.scss";
 import "../../../sass/components/button.scss";
-import "../../../sass/components/checkbox.scss"
+import "../../../sass/components/Checkbox.scss"
 
 export const BotSettings = () => {
   const [role, setRole] = useState<string | null>(null);
@@ -20,12 +20,12 @@ export const BotSettings = () => {
           <Checkbox
             label="Make commands moderator only"
             value="commands"
-            className="checkbox"       
+            className="checkbox-bot-settings"       
           />
           <Checkbox
             label="Disable warnings for disabled commands"
             value="warnings"
-            className="checkbox"   
+            className="checkbox-bot-settings"   
           />
         </Checkbox.Group>
       </div>

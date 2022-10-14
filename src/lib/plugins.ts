@@ -75,6 +75,6 @@ async function fakeNetwork(key?: string) {
   }
 
   return new Promise((res) => {
-    setTimeout(res, 1800);
+    setTimeout(res, 800);
   });
 }
