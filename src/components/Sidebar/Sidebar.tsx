@@ -12,7 +12,7 @@ export const Sidebar = () => {
           <Navbar.Section className="top-header">
             <img
               width={100}
-              src="src\assets\logo\Logo, no text tranparent.png"
+              src="src\assets\images\Logo, no text tranparent.png"
             />
             <span className="logo-text">GLITCH</span>
           </Navbar.Section>

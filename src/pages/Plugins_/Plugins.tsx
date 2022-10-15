@@ -5,9 +5,10 @@ import "../../sass/utils/themes.scss";
 import "../../sass/components/input-text.scss";
 import { useState, useEffect } from "react";
 import { getPlugins, type Plugin } from "../../lib/plugins";
-
+import { useTheme } from "../../hooks/useTheme";
 
 export const Plugins = () => {
+  const { themes, currentTheme } = useTheme();
   const [pluginData, setPlugindata] = useState<Plugin[]>([]);
   const [loading, setLoading] = useState(false);
 
@@ -38,10 +39,10 @@ export const Plugins = () => {
           <PluginCard
             name={name}
             description={description}
-            // commands={commands}
-            // settings={settings}
             isEnabled={isEnabled}
             uuid={uuid}
+            // commands={commands}
+            // settings={settings}
           />
         </Grid.Col>
       );

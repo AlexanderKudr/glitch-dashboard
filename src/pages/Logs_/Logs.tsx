@@ -2,8 +2,10 @@ import { Grid, Text, Title, Box, Table } from "@mantine/core";
 import { TableComp } from "../../components/Table/TableComp";
 import { activities } from "../../utils/RecentActivities";
 import { useState } from "react";
+import { useTheme } from "../../hooks/useTheme";
+
 export const Logs = () => {
-  
+  const { themes, currentTheme } = useTheme();
   return (
     <>
       <Title p="sm" color="var(--logo-text)" order={3} weight={600}>

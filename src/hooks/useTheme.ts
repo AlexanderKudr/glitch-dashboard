@@ -12,6 +12,7 @@ export const useTheme = () => {
       ? setCurrentTheme(themes[1])
       : setCurrentTheme(themes[0]);
   };
+  
   return {
     currentTheme,
     themes,

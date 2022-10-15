@@ -6,7 +6,7 @@ import { Plugins } from "../pages/Plugins_/Plugins";
 import { Logs } from "../pages/Logs_/Logs";
 import { Commands } from "../pages/Commands_/Commands";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <Sidebar />,
