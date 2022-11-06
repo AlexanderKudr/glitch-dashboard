@@ -6,26 +6,28 @@ import { Plugins } from "../pages/Plugins_/Plugins";
 import { Logs } from "../pages/Logs_/Logs";
 import { Commands } from "../pages/Commands_/Commands";
 
+const BASE_PATH = window.location.pathname || '/';
+
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: `${BASE_PATH}`,
     element: <Sidebar />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        path: `${BASE_PATH}`,
         element: <Dashboard />,
       },
       {
-        path: "/plugins",
+        path: `${BASE_PATH}/plugins`,
         element: <Plugins />,
       },
       {
-        path: "/commands",
+        path: `${BASE_PATH}/commands`,
         element: <Commands />,
       },
       {
-        path: "/logs",
+        path: `${BASE_PATH}/logs`,
         element: <Logs />,
       },
     ],

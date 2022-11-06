@@ -1,0 +1,35 @@
+stages:
+  - build
+  - release
+
+build:
+  image: node:16
+  stage: build
+  variables:
+    ASSET_URL: "/dashboard"
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    expire_in: 2 hrs
+    paths:
+      - dist
+
+release:
+  stage: release
+  image: docker:latest
+  only:
+    - "deploy"
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: "overlay"
+  before_script:
+    - "docker version"
+    - "docker info"
+    - "docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY"
+  script:
+    - "docker build -t ${CI_REGISTRY}/${CI_PROJECT_PATH}:latest --pull ."
+    - "docker push ${CI_REGISTRY}/${CI_PROJECT_PATH}:latest"
+  after_script:
+    - "docker logout ${CI_REGISTRY}"

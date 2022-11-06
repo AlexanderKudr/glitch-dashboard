@@ -5,6 +5,8 @@ import { FaDesktop, FaBuffer, FaCode, FaDatabase } from "react-icons/fa";
 import { CustomNavLink } from "./CustomNavLink";
 
 export const Sidebar = () => {
+  const BASE_PATH = window.location.pathname || '/';
+
   return (
     <>
       <AppShell>
@@ -18,10 +20,10 @@ export const Sidebar = () => {
           </Navbar.Section>
           <Navbar.Section className="middle" mt="lg">
             <ul className="ul">
-              <CustomNavLink to="/" icon={<FaDesktop />} name="Dashboard" />
-              <CustomNavLink to="/plugins" icon={<FaBuffer />} name="Plugins" />
-              <CustomNavLink to="/commands" icon={<FaCode />} name="Commands" />
-              <CustomNavLink to="/logs" icon={<FaDatabase />} name="Logs" />
+              <CustomNavLink to={ BASE_PATH + "/" } icon={<FaDesktop />} name="Dashboard" />
+              <CustomNavLink to={ BASE_PATH + "plugins" } icon={<FaBuffer />} name="Plugins" />
+              <CustomNavLink to={ BASE_PATH + "commands" } icon={<FaCode />} name="Commands" />
+              <CustomNavLink to={ BASE_PATH + "logs" } icon={<FaDatabase />} name="Logs" />
             </ul>
           </Navbar.Section>
           <Navbar.Section>{/* Footer with user */}</Navbar.Section>
