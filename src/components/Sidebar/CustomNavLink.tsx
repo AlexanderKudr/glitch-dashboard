@@ -1,7 +1,7 @@
 import { NavLink, To } from "react-router-dom";
 export interface NavLink {
   name: string;
-  to: To;
+  to: any;
   icon: React.ReactNode
 }
 export const CustomNavLink = ({ to, name, icon }: NavLink) => {

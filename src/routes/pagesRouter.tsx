@@ -6,7 +6,12 @@ import { Plugins } from "../pages/Plugins_/Plugins";
 import { Logs } from "../pages/Logs_/Logs";
 import { Commands } from "../pages/Commands_/Commands";
 
-const BASE_PATH = window.location.pathname || '/';
+const getPathname = () => {
+  if (window.location.pathname.indexOf("/dashboard") === 0) {
+    return `/dashboard`;
+  }
+};
+export const BASE_PATH = getPathname();
 
 export const router = createBrowserRouter([
   {

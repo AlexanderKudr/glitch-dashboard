@@ -6,7 +6,7 @@ import { Tip } from "../../../components/Tip/Tip";
 import { Checkbox } from "@mantine/core";
 import "./BotSettings.scss";
 import "../../../sass/components/button.scss";
-// import "../../../sass/components/Checkbox.scss"
+import "../../../sass/components/Checkbox.scss"
 
 export const BotSettings = () => {
   const [role, setRole] = useState<string | null>(null);

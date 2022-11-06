@@ -30,11 +30,13 @@ export const Commands = () => {
     const login = import.meta.env.VITE_LOGIN;
     const pass = import.meta.env.VITE_PASSWORD;
     const credentials = `${login}:${pass}`;
+
     const credInfo = {
       headers: {
         Authorization: `Basic ${credentials}`,
       },
     };
+    
     let endpoints = [
       "https://glitchfiles.com/api/plugins/710e292e-856b-4151-a9c5-6414f542baf6/commands",
       "https://glitchfiles.com/api/plugins/2f73db78-da6d-4b07-af29-e48f3e04e8f8/commands",
