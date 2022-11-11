@@ -5,7 +5,7 @@ import errorAnimation from "../assets/animations/errorAnimation.json";
 
 export const ErrorPage = () => {
   const { themes, currentTheme } = useTheme();
-
+  
   return (
     <Container style={{ display: "flex", width: "100vh" }}>
       <Center style={{ width: "100vh", height: "100vh", display: "flex" }}>

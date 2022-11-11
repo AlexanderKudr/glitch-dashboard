@@ -6,6 +6,7 @@ import { useTheme } from "../../hooks/useTheme";
 
 export const Logs = () => {
   const { themes, currentTheme } = useTheme();
+
   return (
     <>
       <Title p="sm" color="var(--logo-text)" order={3} weight={600}>
