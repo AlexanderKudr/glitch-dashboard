@@ -42,7 +42,7 @@ export const Commands = () => {
       "https://glitchfiles.com/api/plugins/2f73db78-da6d-4b07-af29-e48f3e04e8f8/commands",
       "https://glitchfiles.com/api/plugins/b11b366c-d647-420d-b8cb-56975da23568/commands",
     ];
-
+//refactor to React Query
     const commands = await Promise.all(
       endpoints.map((endpoint) => axios.get(endpoint).then(({ data }) => data))
     ).then((commands) => commands.flatMap((command) => command));

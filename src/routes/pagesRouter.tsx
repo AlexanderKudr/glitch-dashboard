@@ -1,10 +1,10 @@
-import { Dashboard } from "../pages/Dashboard_/Dashboard";
-import { Sidebar } from "../components/Sidebar/Sidebar";
-import { ErrorPage } from "../pages/ErrorPage";
-import { createBrowserRouter } from "react-router-dom";
-import { Plugins } from "../pages/Plugins_/Plugins";
 import { Logs } from "../pages/Logs_/Logs";
+import { Sidebar } from "../components/Sidebar/Sidebar";
+import { Plugins } from "../pages/Plugins_/Plugins";
 import { Commands } from "../pages/Commands_/Commands";
+import { ErrorPage } from "../pages/ErrorPage";
+import { Dashboard } from "../pages/Dashboard_/Dashboard";
+import { createBrowserRouter } from "react-router-dom";
 
 const getPathname = () => {
   if (window.location.pathname.indexOf("/dashboard") === 0) {
