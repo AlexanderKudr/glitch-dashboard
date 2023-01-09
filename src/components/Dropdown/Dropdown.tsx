@@ -1,8 +1,6 @@
-import { Select, SelectProps } from "@mantine/core";
+import { Select, SelectProps as DropDownProps } from "@mantine/core";
 
-type Props = Pick<SelectProps, "data">;
-
-export const Dropdown = (props: SelectProps) => {
+export const Dropdown = (props: DropDownProps) => {
   return (
     <Select
       transition="pop-top-left"
