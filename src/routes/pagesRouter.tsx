@@ -6,32 +6,31 @@ import { ErrorPage } from "../pages/ErrorPage";
 import { Dashboard } from "../pages/Dashboard_/Dashboard";
 import { createBrowserRouter } from "react-router-dom";
 
-const getPathname = () => {
+export const getPathname = () => {
   if (window.location.pathname.indexOf("/dashboard") === 0) {
     return `/dashboard`;
   }
 };
-export const BASE_PATH = getPathname();
 
 export const router = createBrowserRouter([
   {
-    path: `${BASE_PATH}`,
+    path: `${getPathname()}`,
     element: <Sidebar />,
     children: [
       {
-        path: `${BASE_PATH}`,
+        path: `${getPathname()}`,
         element: <Dashboard />,
       },
       {
-        path: `${BASE_PATH}/plugins`,
+        path: `${getPathname()}/plugins`,
         element: <Plugins />,
       },
       {
-        path: `${BASE_PATH}/commands`,
+        path: `${getPathname()}/commands`,
         element: <Commands />,
       },
       {
-        path: `${BASE_PATH}/logs`,
+        path: `${getPathname()}/logs`,
         element: <Logs />,
       },
     ],

@@ -4,9 +4,11 @@ import { Outlet } from "react-router-dom";
 import { FaDesktop, FaBuffer, FaCode, FaDatabase } from "react-icons/fa";
 import { CustomNavLink } from "./CustomNavLink";
 import logo from "../../assets/Images/logo.png";
-import { BASE_PATH } from "../../routes/pagesRouter";
+import { getPathname } from "../../routes/pagesRouter";
+import {useState} from "react";
 
 export const Sidebar = () => {
+  const [input, setInput] = useState("")
   return (
     <>
       <AppShell>
@@ -18,22 +20,22 @@ export const Sidebar = () => {
           <Navbar.Section className="middle" mt="lg">
             <ul className="ul">
               <CustomNavLink
-                to={`${BASE_PATH}`}
+                to={`${getPathname()}`}
                 icon={<FaDesktop />}
                 name="Dashboard"
               />
               <CustomNavLink
-                to={`${BASE_PATH}/plugins`}
+                to={`${getPathname()}/plugins`}
                 icon={<FaBuffer />}
                 name="Plugins"
               />
               <CustomNavLink
-                to={`${BASE_PATH}/commands`}
+                to={`${getPathname()}/commands`}
                 icon={<FaCode />}
                 name="Commands"
               />
-              <CustomNavLink
-                to={`${BASE_PATH}/logs`}
+              <CustomNavLink 
+                to={`${getPathname()}/logs`}
                 icon={<FaDatabase />}
                 name="Logs"
               />
